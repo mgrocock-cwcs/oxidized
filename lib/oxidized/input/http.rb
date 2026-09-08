@@ -7,6 +7,7 @@ module Oxidized
     def connect(node)
       @node = node
       @secure = false
+      @port = nil
       @username = nil
       @password = nil
       @headers = {}
@@ -83,7 +84,8 @@ module Oxidized
     end
 
     def make_request(uri, ssl_verify, extra_headers = {}, method: :get, body: nil)
-      Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https", verify_mode: ssl_verify) do |http|
+      Net::HTTP.start(uri.hostname, @port || uri.port, use_ssl:     uri.scheme == "https",
+                                                       verify_mode: ssl_verify) do |http|
         req_class = if method == :get
                       Net::HTTP::Get
                     elsif method == :post
