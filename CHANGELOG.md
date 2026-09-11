@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - ingate: redact secrets (private keys, passwords, secrets, passphrases, pre-shared keys, tokens and the SNMP community) when remove_secret is set (@thanegill)
 
 ### Fixed
+- input/cli: raise an error when a requested login credential is missing. Fixes #3700 (@robertcheramy)
 - eos: hide the community string / v3 user in snmp-server host lines. Fixes #3882 (@FusionBrah)
 - aoscx: mask the community string in snmp-server host lines instead of the token after the host address. Fixes #3881 (@FusionBrah)
 - junos: redact cleartext passwords embedded in archive-site URLs. Fixes #3640 (@KalebFenley)
