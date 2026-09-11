@@ -214,7 +214,7 @@ the `input` section.
 
 Starting with version 0.37.0, `debug` can take different values:
 - `text`: log input and output to a text file (ssh, telnet)
-- `yaml`: produce a yaml simulation file (ssh, scp)
+- `yaml`: produce a yaml simulation file (ssh)
 - `library`: activate debug logging of the underlying library
 - a combination of the options above (`text, yaml`)
 - `true`; activate all debugging options (Only option for versions prior 0.37.0)
