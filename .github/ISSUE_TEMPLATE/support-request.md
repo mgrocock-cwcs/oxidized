@@ -35,7 +35,9 @@ If applicable, add logs to help explain your problem.
 **Running environment (please complete the following information):**
 <!-- complete the following information and add further details if needed.
 Always test the latest version of oxidized.
-Tip: run `oxidized --support` to generate most of this automatically. Remove any
+Tip: run `oxidized --support` as the same user and in the same environment as
+the regular Oxidized process. With Docker, use
+`docker exec --user oxidized <container-name> oxidized --support`. Remove any
 sensitive data before sharing the output. -->
 - OS: [e.g. Debian Bookworm, official container version xxx, ...]
 - oxidized version: [e.g. 0.32.2]

@@ -67,11 +67,20 @@ Include as many relevant details as possible. At a minimum, specify:
 - Output of the error, if relevant.
 - For issues related to specific devices, consider creating a YAML Simulation file (instructions below).
 
-Please include the output of `oxidized --support` whenever possible. It prints
-the Oxidized version, operating system, Ruby environment, a sanitized copy of
-your configuration and the relevant installed gems. Sensitive keys (passwords,
-tokens, ...) are redacted, but please review the output and remove any remaining
-sensitive data before sharing it.
+Please include the output of `oxidized --support` whenever possible. Run the
+command in the same environment and as the same user as the regular Oxidized
+process so that it finds the correct configuration, environment and gems. For
+Docker installations, run it inside the running container as the `oxidized`
+user, for example:
+
+```shell
+docker exec --user oxidized <container-name> oxidized --support
+```
+
+The command prints the Oxidized version, operating system, Ruby environment, a
+sanitized copy of your configuration and the relevant installed gems. Sensitive
+keys (passwords, tokens, ...) are redacted, but please review the output and
+remove any remaining sensitive data before sharing it.
 
 Also, provide clear steps to reproduce the issue, if applicable.
 
